@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .file-list {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-item {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-item span {
+            color: #555;
+        }
+
+        .old-file {
+            background-color: #ffcccc;
+        }
+
+        .recent-file {
+            background-color: #ccffcc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Files Changed More Than a Month Ago</h1>
+
+    <div class="file-list">
+        {% if files %}
+            {% for file in files %}
+                <div class="file-item old-file">
+                    <span>{{ file }}</span>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No files have been changed in the last month.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
